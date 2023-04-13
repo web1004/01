@@ -1,0 +1,142 @@
+@import url(common.css);
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellota:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/*사용한 웹폰트
+font-family: 'Exo', sans-serif;
+font-family: 'Staatliches', cursive;
+font-family: 'Raleway', sans-serif;
+font-family: 'Bellota', cursive;
+font-family: 'Bebas Neue', cursive;
+*/
+
+#website{
+  width:1300px;
+  margin:0 auto;
+}
+#website h2{
+  font-family: 'Exo', sans-serif;
+  font-size:36px;
+  color:#333;
+  margin-top:50px;
+}
+#website>p{
+	font-size:20px;
+  color:#666;
+  border-bottom:1px solid #ccc;
+  padding-bottom:20px;
+  margin-bottom:50px;
+}
+
+.website_list{
+  width:100%;
+  height:900px;
+  position:relative;
+  /*background:pink;*/
+}
+.website_list>div{
+  float:left;
+  margin-right:30px;
+  margin-bottom:30px;
+  width:400px;
+  height:400px;
+  overflow:hidden;
+  box-sizing:border-box;
+  position:relative;  /*각 div 부모설정*/
+  display:flex; 
+	justify-content:center;
+	align-items:center;
+}
+
+/*이미지오버 트렌지션효과*/
+.website_list>div img{
+  transform:scale(1);
+	transition:all 0.5s;
+}
+.website_list>div:hover img{
+  opacity:0.7;
+  transform:scale(1.2);
+}
+
+
+.site_title,.site_link{  
+  position:absolute; 
+  z-index:200;
+}
+.site_title{
+  color:#fff;
+  font-size:40px;
+  font-family: 'Staatliches', cursive;
+}
+
+/*링크부분 오버 트렌지션효과*/
+.site_link{
+  color:#fff;
+  font-size:18px;
+  font-family: 'Bellota', cursive;
+  margin-top:70px;
+  opacity:0;
+  transition:all 0.5s;
+}
+.website_list>div:hover .site_link{opacity:1;}
+
+.site_link:hover a{color:#ffff00;text-decoration:underline;}
+
+/*이미지 오버시 나오는 설명글자*/
+.stext{
+  position:absolute;
+  left:20px;
+  width:500px;
+  /* background:yellow; */
+}
+
+/*jQuery 에서 나오게 함*/
+.txt1{left:-350px;} /*02 왼쪽->오른쪽*/
+.txt2{top:450px;} /*04* 아래->위*/
+.txt3{top:-350px;}  /*01 위->아래*/
+.txt4{left:450px;} /*03 오른쪽->왼쪽*/
+
+
+.stext h3{
+  position:relative; /*각 제목에 나오는 숫자(01~04) 위치설정을 위해 부모설정*/
+  font-size:35px;
+  letter-spacing: 1px;
+  font-family: 'Raleway', sans-serif;
+}
+.stext h3:before{ /*h3태그 앞에 삽입*/
+  position:absolute;
+  top:-25px;
+  left:-20px;
+  font-size:55px;
+  font-weight:900;
+  color:rgba(128, 128, 128, 0.34);
+  font-family: 'Exo', sans-serif;
+}
+.txt1 h3:before{content: '02';}
+.txt2 h3:before{content: '04';}
+.txt3 h3:before{content: '01';}
+.txt4 h3:before{content: '03';}
+
+.stext>span{
+  font-size:18px;
+  padding:8px 0 20px;
+  display:block;
+  font-weight: bold;
+  color:#666;
+}
+.stext>hr{
+  width:30px;
+  height:6px;
+  background:#000;
+  margin-bottom:25px;
+  font-weight: 100;
+  border:none;
+}
+.stext>p{
+  font-size:16px;
+  letter-spacing:1px;
+  line-height: 25px;
+}
